@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  homeassistant:
+    image: homeassistant/home-assistant:latest
+    restart: unless-stopped
+    volumes:
+      - ./config/home-assistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    network_mode: host
+    privileged: true
